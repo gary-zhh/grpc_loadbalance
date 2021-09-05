@@ -1,0 +1,67 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "hello.proto",
+    "description": "包名",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/helloworld": {
+      "post": {
+        "summary": "具体的远程服务方法",
+        "operationId": "SayHello",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hello_grpcHelloReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hello_grpcHelloRequest"
+            }
+          }
+        ],
+        "tags": [
+          "定义的服务名"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "hello_grpcHelloReply": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "description": "SayHello方法的返回值，只有一个字符串字段"
+    },
+    "hello_grpcHelloRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "description": "SayHello方法的入参，只有一个字符串字段"
+    }
+  }
+}
