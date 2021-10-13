@@ -1,0 +1,19 @@
+// 协议类型
+syntax = "proto3";
+// 包名
+package sum_grpc;
+option go_package = "/sum_grpc";
+// 定义的服务名
+service Sum {
+  // 具体的远程服务方法
+  rpc Add (AddRequest) returns (AddReply) {}
+}
+// Add方法的入参，只有一个字符串字段
+message AddRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+// Add方法的返回值，只有一个字符串字段
+message AddReply {
+  int64 sum = 1;
+}
