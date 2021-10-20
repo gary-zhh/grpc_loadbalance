@@ -3,6 +3,7 @@ module hello_grpc
 go 1.12
 
 require (
+	github.com/go-kit/kit v0.11.0
 	github.com/golang/protobuf v1.5.2
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0

@@ -1,0 +1,17 @@
+syntax = "proto3";
+// 包名
+package teststream;
+option go_package = "/teststream";
+// 定义的服务名
+service TestStream {
+  // 具体的远程服务方法
+  rpc Send (stream Request) returns (stream Response) {
+  }
+}
+
+message Request {
+   bytes req = 1;
+}
+message Response {
+   bytes res = 1;
+}

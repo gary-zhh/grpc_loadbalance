@@ -1,0 +1,21 @@
+// 协议类型
+syntax = "proto3";
+// 包名
+package stub;
+option go_package = "/stub";
+import "google/protobuf/any.proto";
+// 定义的服务名
+service Greeter {
+  // 具体的远程服务方法
+  rpc SayHello (google.protobuf.Any) returns (google.protobuf.Any) {
+  }
+}
+// SayHello方法的入参，只有一个字符串字段
+//message Request {
+//  google.protobuf.Any req = 1;
+//
+//}
+//// SayHello方法的返回值，只有一个字符串字段
+//message Reply {
+//  google.protobuf.Any  res = 1;
+//}

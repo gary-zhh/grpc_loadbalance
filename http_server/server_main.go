@@ -23,6 +23,7 @@ func run() error {
 	opts := []grpc.DialOption{grpc.WithInsecure()}
 	err := pb.RegisterGreeterHandlerFromEndpoint(ctx, mux, *echoEndpoint, opts)
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
 	return http.ListenAndServe(":9999", mux)
