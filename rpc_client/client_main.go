@@ -15,6 +15,7 @@ func main() {
 	client := pb.NewGreeterClient(conn)
 	rep, err := client.SayHello(context.Background(), &pb.HelloRequest{Name: "zhou"})
 	fmt.Println(rep, err)
+
 	rep, err = client.SayHello(context.Background(), &pb.HelloRequest{Name: "zhou"})
 	fmt.Println(rep, err)
 	rep, err = client.SayHello(context.Background(), &pb.HelloRequest{Name: "zhou"})
